@@ -1,0 +1,6 @@
+"homepage": "https://YOUR-GITHUB-USERNAME.github.io/bankprep-app",
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "deploy": "gh-pages -d dist"
+}

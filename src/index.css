@@ -1,0 +1,125 @@
+/* ========= RESET & BASE ========= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #6c63ff;
+  --primary-dark: #4b44cc;
+  --primary-light: #a39dff;
+  --accent: #ff6b6b;
+  --success: #43e97b;
+  --warning: #f7971e;
+  --danger: #ff4e50;
+  --bg: #0d0f1a;
+  --surface: #161929;
+  --surface2: #1e2238;
+  --surface3: #252a45;
+  --border: rgba(108, 99, 255, 0.2);
+  --text: #e8eaf0;
+  --text-muted: #8b92b0;
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+  --radius: 16px;
+  --radius-sm: 8px;
+  --font: 'Inter', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+}
+
+/* ========= SCROLLBAR ========= */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+/* ========= ANIMATIONS ========= */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(108, 99, 255, 0); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.fade-up { animation: fadeUp 0.6s ease forwards; }
+
+/* ========= BUTTON ========= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.4);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(108, 99, 255, 0.6);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--primary-light);
+  border: 1.5px solid var(--border);
+}
+.btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.btn-danger {
+  background: linear-gradient(135deg, #ff4e50, #f09819);
+  color: #fff;
+}
+.btn-success {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: #111;
+}
+
+/* ========= CARD ========= */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(108, 99, 255, 0.15);
+}
+
+/* ========= BADGE ========= */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.badge-primary { background: rgba(108,99,255,0.2); color: var(--primary-light); }
+.badge-success { background: rgba(67,233,123,0.2); color: var(--success); }
+.badge-danger  { background: rgba(255,78,80,0.2);  color: var(--danger); }
